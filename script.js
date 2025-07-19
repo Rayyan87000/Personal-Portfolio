@@ -14,7 +14,7 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav ul li a[href*=' + id +']').classList.add(active);
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             })
         }
     })
@@ -23,7 +23,6 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
-
 document.getElementById('contact-form').addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -68,3 +67,18 @@ function showPopup(message, type) {
         popup.classList.add('hidden');
     }, 3000);
 }
+
+// Fade-in animation for timeline containers
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.experience .container[data-animate]').forEach(el => {
+  observer.observe(el);
+});
+
