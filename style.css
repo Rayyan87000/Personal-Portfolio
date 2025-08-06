@@ -15,7 +15,7 @@
     --bg-color : #000000;
     --second-bg-color : #161616;
     --text-color : #fff;
-    --main-color: #e1352c;
+    --main-color: #B527B7;
 }
 html {
     font-size: 62.5%;
@@ -381,8 +381,34 @@ span {
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 1.5rem 0;
     color: var(--text-color);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--text-color);
+    color: var(--main-color);
+    text-decoration: none;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--text-color);
+}
+
+.project-link:hover {
+    background: transparent;
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.project-link i {
+    font-size: 1.4rem;
 }
 
 /* Responsive Design */
@@ -446,6 +472,28 @@ span {
 }
 .skills .container .bar .info img {
     max-width: 50px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Enlarge SpringBoot and Python images */
+.skills .container .bar .info img[alt="SpringBoot Logo"] {
+    max-width: 85px;
+    height: auto;
+    object-fit: contain;
+}
+
+.skills .container .bar .info img[alt="Python Logo"] {
+    max-width: 70px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Enlarge Java, C, and C++ images */
+.skills .container .bar .info img[alt="Java Logo"],
+.skills .container .bar .info img[alt="C Logo"],
+.skills .container .bar .info img[alt="C++ Logo"] {
+    max-width: 75px;
     height: auto;
     object-fit: contain;
 }
